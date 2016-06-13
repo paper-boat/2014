@@ -1,0 +1,968 @@
+body, h1, h2, h3, h4, h5, h6, p, pre, ul, li, a {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+}
+
+@font-face {
+  font-family: 'Quantico';
+  src: url("../fonts/Quantico-Regular-webfont.eot");
+  src: url("../fonts/Quantico-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Quantico-Regular-webfont.woff") format("woff"), url("../fonts/Quantico-Regular-webfont.ttf") format("truetype"), url("../fonts/Quantico-Regular-webfont.svg#quanticoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/lato-regular-webfont.eot");
+  src: url("../fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-regular-webfont.woff") format("woff"), url("../fonts/lato-regular-webfont.ttf") format("truetype"), url("../fonts/lato-regular-webfont.svg#latoregular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/lato-light-webfont.eot");
+  src: url("../fonts/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-light-webfont.woff") format("woff"), url("../fonts/lato-light-webfont.ttf") format("truetype"), url("../fonts/lato-light-webfont.svg#latolight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/lato-bold-webfont.eot");
+  src: url("../fonts/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-bold-webfont.woff") format("woff"), url("../fonts/lato-bold-webfont.ttf") format("truetype"), url("../fonts/lato-bold-webfont.svg#latobold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url("../fonts/lato-black-webfont.eot");
+  src: url("../fonts/lato-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/lato-black-webfont.woff") format("woff"), url("../fonts/lato-black-webfont.ttf") format("truetype"), url("../fonts/lato-black-webfont.svg#latoblack") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  background: #FFF;
+  font-family: 'Lato', 'Arial', 'Helvetica', 'sans-serif';
+}
+
+.scrollbar {
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  z-index: 10;
+  width: 160px;
+  height: 310px;
+  color: #7a7a7a;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.scrollbar .counter {
+  font-size: 14px;
+}
+
+.scrollbar .dots {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.scrollbar .dots a {
+  display: block;
+  padding: 13px 0;
+  color: #000;
+}
+
+.scrollbar .dots a::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 2px;
+  background: #7a7a7a;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+#line2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  width: 280px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: all 1s ease;
+}
+
+#fullpage {
+  position: relative;
+  width: 100%;
+  perspective: 1100px;
+  min-height: 100%;
+}
+
+#fullpage .section {
+  overflow: hidden;
+  min-height: 700px;
+}
+
+#fullpage .section-1 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 1200px;
+  min-height: 500px;
+  background: #191919;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#fullpage .section-2 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 1200px;
+  background: url(../images/bg_section2.jpg) 50% 50% #eaeaea no-repeat;
+  color: #141414;
+  text-transform: uppercase;
+}
+
+#fullpage .section-3 {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#fullpage .section-4 {
+  position: relative;
+}
+
+#fullpage .section-5 {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#fullpage .section-6 {
+  position: relative;
+  display: block !important;
+  padding-right: 160px;
+}
+
+#fullpage .section-7 {
+  position: relative;
+  width: 100%;
+  height: 1200px;
+  background: #191919;
+  background: url(../images/bg_section7.jpg) center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.section.fp-section {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.fp-tableCell {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.section-1 .line-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  height: 270px;
+  transition: width 2s linear,height 2s ease-out 1.85s;
+}
+
+.section-1 .line-wrapper #line1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 1s ease;
+}
+
+.section-1 .background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 0;
+  width: 3840px;
+  height: 100%;
+  margin-left: -1920px;
+  background: linear-gradient(to bottom, #191919 0%, rgba(25, 25, 25, 0) 50%), url(../images/bg_section1.jpg) top left;
+  animation: section1 45s linear infinite;
+}
+
+@keyframes section1 {
+  0% {
+    background-position: 0% 0%,0% 0px;
+  }
+  100% {
+    background-position: 0% 0%,0% -1200px;
+  }
+}
+
+.section-1 h1 {
+  position: absolute;
+  top: 115px;
+  left: 8%;
+  z-index: 1;
+  width: 310px;
+  color: #fff;
+  font-family: 'Quantico', 'Arial', 'sans-serif';
+  font-size: 120px;
+  line-height: 70px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.section-1 h1 small {
+  position: relative;
+  display: block;
+  left: 80px;
+  opacity: 0;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 11px;
+  transition: all 1s ease;
+}
+
+.section-1.active h1 small {
+  left: 6px;
+  opacity: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 160px);
+  padding-left: 8%;
+  margin: 0;
+  margin-top: 120px;
+}
+
+.container .claim {
+  text-align: center;
+}
+
+.container .claim h2 {
+  position: relative;
+  left: 80px;
+  top: auto;
+  opacity: 0;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 22px;
+  transition: all 1s ease 1s;
+}
+
+.container .claim p {
+  position: relative;
+  left: 80px;
+  opacity: 0;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 10px;
+  transition: all 1s ease 2s;
+}
+
+.section-1.active .claim h2, .section-1.active .claim p {
+  left: 0;
+  opacity: 1;
+}
+
+.section-1 .badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin-top: -20px;
+}
+
+.section-1 .badge a {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section-1 .badge .awwwards {
+  margin-left: -20px;
+}
+
+h2 {
+  position: absolute;
+  top: 95px;
+  left: 8%;
+  font-size: 72px;
+  letter-spacing: 22px;
+  text-transform: uppercase;
+}
+
+h2 small {
+  display: block;
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 14px;
+}
+
+.section-2 h2 {
+  left: 0;
+  opacity: 0;
+  transition: all 1s ease 0.5s;
+}
+
+.section-2 h2 small {
+  margin-left: 3px;
+}
+
+.section-2 .text {
+  position: absolute;
+  bottom: 110px;
+  right: 280px;
+  opacity: 0;
+  z-index: 1;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 15px;
+  transition: all 1s 2.5s;
+}
+
+.squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.squares .square li {
+  transition: all 1s ease;
+}
+
+.squares .square .bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 10px;
+}
+
+.squares .square .top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 10px;
+}
+
+.squares .square .right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 0;
+}
+
+.squares .square .left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 0;
+}
+
+.squares .square-1 {
+  position: absolute;
+  top: 670px;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  margin-left: 140px;
+}
+
+.squares .square-1 li {
+  background: #d7d7d7;
+}
+
+.squares .square-2 {
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  width: 278px;
+  height: 278px;
+  margin-left: -60px;
+}
+
+.squares .square-2 li {
+  background: #89d6f6;
+}
+
+.squares .square-3 {
+  position: absolute;
+  top: 360px;
+  left: 50%;
+  width: 278px;
+  height: 278px;
+  margin-left: -350px;
+}
+
+.squares .square-3 li {
+  background: #fff28c;
+}
+
+.squares .square-4 {
+  position: absolute;
+  top: 520px;
+  left: 50%;
+  width: 210px;
+  height: 210px;
+  margin-left: 90px;
+}
+
+.squares .square-4 li {
+  background: #ffc57c;
+}
+
+.squares .square-5 {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  margin-left: -960px;
+}
+
+.squares .square-5 li {
+  background: #89e6ba;
+}
+
+.section-2.active h2 {
+  left: 8%;
+  opacity: 1;
+}
+
+.section-2.active .text {
+  right: 200px;
+  opacity: 1;
+}
+
+.section-2.active .squares .square .bottom, .section-2.active .squares .square .top {
+  width: 100%;
+}
+
+.section-2.active .squares .square .left, .section-2.active .squares .square .right {
+  height: 100%;
+}
+
+.section-2.active .squares .square-1 li {
+  transition-delay: 2.5s;
+}
+
+.section-2.active .squares .square-2 li {
+  transition-delay: 1.5s;
+}
+
+.section-2.active .squares .square-3 li {
+  transition-delay: 2.5s;
+}
+
+.section-2.active .squares .square-4 li {
+  transition-delay: 2.5s;
+}
+
+.section-2.active .squares .square-5 li {
+  transition-delay: 2s;
+}
+
+.section-3 .awards-list a:before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  opacity: 0;
+  width: 130px;
+  height: 130px;
+  color: #fff;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 134px;
+  text-align: center;
+  transition: all 1s ease;
+}
+
+.section-3 .awards-list a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 2px solid #202020;
+  transition: height 1s ease .75s;
+}
+
+h3.side-header {
+  position: absolute;
+  left: calc(100% - 70px);
+  top: 95px;
+  width: 400px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  transform: rotateZ(90deg);
+  transform-origin: top left;
+}
+
+.section-3 h2 {
+  top: 40px;
+  left: 0;
+  opacity: 0;
+  color: #fff;
+  transition: all 1s ease .5s;
+}
+
+.section-3 h2 small {
+  display: block;
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 14px;
+}
+
+.section-3 h3.side-header {
+  color: #fff;
+}
+
+.section-3 .awards-list {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.section-3 .awards-list::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 130px;
+  height: 0%;
+  border-right: 1px solid #202020;
+  transition: height 2s ease 2s;
+}
+
+.section-3 .awards-list > div {
+  position: relative;
+}
+
+.section-3 .awards-list a {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 130px;
+  border-bottom: 2px solid #202020;
+  color: #fff;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 134px;
+  text-align: left;
+  text-transform: uppercase;
+  transition: width 1.5s ease;
+}
+
+.section-3 .awards-list a span {
+  position: relative;
+  left: 70%;
+  z-index: 1;
+  opacity: 0;
+  letter-spacing: 10px;
+  transition: all 1s ease;
+}
+
+.section-3 .awards-list .line {
+  position: absolute;
+  top: 70px;
+  right: 160px;
+  width: 0;
+  border-top: 2px solid #fff;
+  transition: all 1s ease;
+}
+
+.section-3.active h2 {
+  left: 8%;
+  opacity: 1;
+}
+
+.section-3.active .awards-list div:nth-last-child(1) a::before {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+.section-3.active .awards-list div:nth-last-child(1) a::after {
+  height: 100%;
+  transition-delay: 1.4s;
+}
+
+.section-3.active .awards-list div:nth-last-child(1) a:hover::before {
+  transform: rotateZ(90deg);
+}
+
+.section-3.active .awards-list div:nth-last-child(1) p {
+  transition-delay: 0.4s;
+}
+
+.section-3.active .awards-list div:nth-last-child(2) a::before {
+  opacity: 1;
+  transition-delay: 0.8s;
+}
+
+.section-3.active .awards-list div:nth-last-child(2) a::after {
+  height: 100%;
+  transition-delay: 1.8s;
+}
+
+.section-3.active .awards-list div:nth-last-child(2) a:hover::before {
+  transform: rotateZ(90deg);
+}
+
+.section-3.active .awards-list div:nth-last-child(2) p {
+  transition-delay: 0.8s;
+}
+
+.section-3.active .awards-list div:nth-last-child(3) a::before {
+  opacity: 1;
+  transition-delay: 1.2s;
+}
+
+.section-3.active .awards-list div:nth-last-child(3) a::after {
+  height: 100%;
+  transition-delay: 2.2s;
+}
+
+.section-3.active .awards-list div:nth-last-child(3) a:hover::before {
+  transform: rotateZ(90deg);
+}
+
+.section-3.active .awards-list div:nth-last-child(3) p {
+  transition-delay: 1.2s;
+}
+
+.section-3.active .awards-list div:nth-last-child(4) a::before {
+  opacity: 1;
+  transition-delay: 1.6s;
+}
+
+.section-3.active .awards-list div:nth-last-child(4) a::after {
+  height: 100%;
+  transition-delay: 2.6s;
+}
+
+.section-3.active .awards-list div:nth-last-child(4) a:hover::before {
+  transform: rotateZ(90deg);
+}
+
+.section-3.active .awards-list div:nth-last-child(4) p {
+  transition-delay: 1.6s;
+}
+
+.section-3.active .awards-list a span {
+  left: 90%;
+  opacity: 1;
+}
+
+.section-3 .awards-list div:nth-child(1) a {
+  border-top: 2px solid #202020;
+}
+
+.section-3.active .awards-list::before {
+  opacity: 1;
+  height: 100%;
+}
+
+.section-3.active .awards-list a::before {
+  opacity: 1;
+}
+
+.section-3.active .awards-list a::after {
+  height: 100%;
+  opacity: 1;
+}
+
+.section-3.active .awards-list div:nth-child(1) a {
+  width: 60%;
+}
+
+.section-3.active .awards-list div:nth-child(1) .line {
+  width: 15%;
+  border-color: #349A82;
+}
+
+.section-3.active .awards-list div:nth-child(2) a {
+  width: 50%;
+}
+
+.section-3.active .awards-list div:nth-child(2) a span {
+  left: 80%;
+}
+
+.section-3.active .awards-list div:nth-child(2) .line {
+  width: 20%;
+  border-color: #753ABD;
+}
+
+.section-3.active .awards-list div:nth-child(3) a {
+  width: 40%;
+}
+
+.section-3.active .awards-list div:nth-child(3) .line {
+  width: 35%;
+  border-color: #F1DE49;
+}
+
+.section-3.active .awards-list div:nth-child(4) a {
+  width: 30%;
+}
+
+.section-3.active .awards-list div:nth-child(4) .line {
+  width: 48%;
+  border-color: #E47A7A;
+}
+
+.section-4 ul li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  width: 0;
+  border-top: 1px solid #d7d7d7;
+  transition: width 1.5s ease;
+}
+
+.section-4 ul li::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  width: 0;
+  border-bottom: 1px solid #d7d7d7;
+  transition: width 1.5s ease;
+}
+
+.grids {
+  font-size: 0;
+}
+
+.grids > * {
+  display: inline-block;
+  font-size: 16px;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.section-4 .grid-left {
+  width: 60%;
+}
+
+.section-4 .grid-right {
+  width: 40%;
+}
+
+.section-4 ul {
+  padding-top: 8%;
+  padding-bottom: 100px;
+  border-right: 1px solid #d7d7d7;
+}
+
+.section-4 ul li {
+  position: relative;
+}
+
+.section-4 ul li a {
+  position: relative;
+  display: block;
+  opacity: 0;
+  padding: 20px 5% 20px 10%;
+  color: #666;
+  font-family: 'Georgia';
+  font-size: 16px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  transition: all 2s ease;
+  white-space: nowrap;
+}
+
+.section-4 ul li a h3 {
+  margin-bottom: 16px;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 12px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.right-column {
+  margin-right: 160px;
+}
+
+.section-4 .right-column {
+  position: relative;
+  left: -80px;
+  opacity: 0;
+  transition: all 1s ease 2s;
+}
+
+.section-4 .right-column .behance {
+  display: inline-block;
+  margin: 30px auto 10px;
+  color: #000;
+  font-size: 77px;
+  font-weight: 300;
+}
+
+.section-4 .right-column .behance span {
+  transition: all 0.5s ease;
+}
+
+.section-4 .right-column .box {
+  position: relative;
+  margin-top: 60px;
+  margin-left: 20px;
+}
+
+.section-4 .right-column .box .badge {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  z-index: 1;
+  display: block;
+  width: 60px;
+  height: 60px;
+  padding: 18px;
+  border: 2px solid #000;
+  text-align: center;
+}
+
+.section-4 .right-column .box .badge img {
+  height: 100%;
+}
+
+.section-4 .right-column .box figure {
+  position: relative;
+}
+
+.section-4 .right-column .box figure a {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  max-width: 418px;
+  max-height: 338px;
+  margin: 0 auto;
+}
+
+.section-4 .right-column .box figure a:hover {
+  transform: scaleX(1.2);
+  transition: all 0.75s ease;
+}
+
+.section-4 .right-column .box figure a img {
+  width: 100%;
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+.section-4 .right-column .box figure a img {
+  width: auto;
+  height: 210px;
+  margin: 0 auto;
+}
+
+.section-4 .right-column .box figure a img:hover {
+  transform: scale(1.3);
+  transition: all 0.75s ease;
+}
+
+.section-4 .right-column .box figure figcaption {
+  position: absolute;
+  top: -40px;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 130px;
+  color: #666;
+  font-family: 'Georgia';
+  font-size: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.section-4.active ul li a {
+  opacity: 1;
+  padding-left: 18%;
+}
+
+.section-4.active ul li a:hover {
+  padding-left: 10%;
+  background: #f7f7f7;
+  color: #b4b4b4;
+}
+
+.section-4.active ul li:before, .section-4.active ul li:last-child:after {
+  width: 100%;
+}
+
+.section-4.active .right-column {
+  left: 0;
+  opacity: 1;
+}
